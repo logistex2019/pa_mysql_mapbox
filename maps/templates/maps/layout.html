@@ -1,0 +1,31 @@
+{% extends '../layout.html' %} {# 프로젝트 수준 layout.html 템플릿을 상속받음 #}
+
+{% load static %}
+
+{% block title %}
+    {{ block.super }} maps
+{% endblock %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="{% static 'maps/maps.css' %}" />
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <table class="pull-left mb-4">
+        <tbody>
+            <tr>
+                <td><img src="{% static 'maps/teaching_shin.jpg' %}" alt="maps logo image"></td>
+                <td><h2 class="ml-4 pt-5">Maps in logistex site </h2></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block extra_body %}
+    {{ block.super }}
+    <script src="{% static 'maps/maps.js' %}"></script>
+{% endblock %}
